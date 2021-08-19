@@ -1,0 +1,14 @@
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\bin\Debug\netcoreapp2.1\AuctionAppConsole.deps.json
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\bin\Debug\netcoreapp2.1\AuctionAppConsole.runtimeconfig.json
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\bin\Debug\netcoreapp2.1\AuctionAppConsole.runtimeconfig.dev.json
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\bin\Debug\netcoreapp2.1\AuctionAppConsole.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\bin\Debug\netcoreapp2.1\AuctionAppConsole.pdb
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\bin\Debug\netcoreapp2.1\AuctionCore.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\bin\Debug\netcoreapp2.1\AuctionCore.pdb
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\obj\Debug\netcoreapp2.1\AuctionAppConsole.csprojAssemblyReference.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\obj\Debug\netcoreapp2.1\AuctionAppConsole.csproj.CoreCompileInputs.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\obj\Debug\netcoreapp2.1\AuctionAppConsole.AssemblyInfoInputs.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\obj\Debug\netcoreapp2.1\AuctionAppConsole.AssemblyInfo.cs
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\obj\Debug\netcoreapp2.1\AuctionAppConsole.csproj.CopyComplete
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\obj\Debug\netcoreapp2.1\AuctionAppConsole.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionAppConsole\obj\Debug\netcoreapp2.1\AuctionAppConsole.pdb

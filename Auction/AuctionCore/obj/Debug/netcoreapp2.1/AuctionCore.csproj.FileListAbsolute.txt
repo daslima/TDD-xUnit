@@ -1,0 +1,9 @@
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\bin\Debug\netcoreapp2.1\AuctionCore.deps.json
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\bin\Debug\netcoreapp2.1\AuctionCore.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\bin\Debug\netcoreapp2.1\AuctionCore.pdb
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\obj\Debug\netcoreapp2.1\AuctionCore.csprojAssemblyReference.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\obj\Debug\netcoreapp2.1\AuctionCore.csproj.CoreCompileInputs.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\obj\Debug\netcoreapp2.1\AuctionCore.AssemblyInfoInputs.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\obj\Debug\netcoreapp2.1\AuctionCore.AssemblyInfo.cs
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\obj\Debug\netcoreapp2.1\AuctionCore.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionCore\obj\Debug\netcoreapp2.1\AuctionCore.pdb
