@@ -1,0 +1,17 @@
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\obj\Debug\netcoreapp2.1\Test.Auction.csprojAssemblyReference.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\obj\Debug\netcoreapp2.1\Test.Auction.csproj.CoreCompileInputs.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\obj\Debug\netcoreapp2.1\Test.Auction.AssemblyInfoInputs.cache
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\obj\Debug\netcoreapp2.1\Test.Auction.AssemblyInfo.cs
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\Test.Auction.deps.json
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\Test.Auction.runtimeconfig.json
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\Test.Auction.runtimeconfig.dev.json
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\Test.Auction.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\Test.Auction.pdb
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\AuctionCore.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\bin\Debug\netcoreapp2.1\AuctionCore.pdb
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\obj\Debug\netcoreapp2.1\Test.Auction.csproj.CopyComplete
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\obj\Debug\netcoreapp2.1\Test.Auction.dll
+C:\Users\21145\Documents\Developer\C#\Teste\Testes de unidade e TDD com xUnit\Auction\AuctionTest\obj\Debug\netcoreapp2.1\Test.Auction.pdb
