@@ -9,15 +9,20 @@ namespace AuctionCore
         public IEnumerable<Bid> Bids => _Bids;
         public string Item { get; }
         public Bid Winner { get; private set; }
-
+        public StatusEnum Status { get; private set; }
 
         public Auction(string item)
         {
             Item = item;
             _Bids = new List<Bid>();
+            Status = StatusEnum.Inprogress;
         }
 
-        public void ReceiveBid(Interested client, double value) => _Bids.Add(new Bid(client, value));
+        public void ReceiveBid(Interested client, double value)
+        {
+            if(Status.Equals(StatusEnum.Inprogress))
+                _Bids.Add(new Bid(client, value));
+        }
 
         public void Start()
         {
@@ -26,8 +31,11 @@ namespace AuctionCore
 
         public void End()
         {
-            Winner = Bids.OrderBy(b => b.Value)
-                            .Last();
+            Status = StatusEnum.Finalized;
+
+            Winner = Bids.DefaultIfEmpty(new Bid(null,0))
+                         .OrderBy(b => b.Value)
+                         .LastOrDefault();
         }
        
     }

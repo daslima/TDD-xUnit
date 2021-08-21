@@ -1,27 +1,31 @@
 ﻿using AuctionCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Test.Auction
 {
-    public class AuctionTest
+    public class AuctionEnd
     {
-        [Fact]
-        public void AuctionWithOnebid()
+        [Theory]
+        [InlineData(1200, new double[] { 800,900,1000,1200})]
+        [InlineData(1000, new double[] { 800,900,1000,990})]
+        [InlineData(800, new double[] { 800})]
+        public void ReturnsHighestValueGivenAnAuctionWithAtLeastOneValue(double valueexpected, double[] ofertas)
         {
-            //Arranje
+            //Arrange
             var auction = new AuctionCore.Auction("PICTURE");
             var joe = new Interested("Joe Delaney", auction);
+            var luise = new Interested("Luise Farmo", auction);
 
-            auction.ReceiveBid(joe, 500);
+            foreach (var value in ofertas)
+            {
+                auction.ReceiveBid(joe, value);
+            }
 
-            //Act
+         
+            //Act 
             auction.End();
 
             //Assert
-            var valueexpected = 500;
             var valueobtained = auction.Winner.Value;
 
             Assert.Equal(valueexpected, valueobtained);
@@ -29,27 +33,19 @@ namespace Test.Auction
         }
 
         [Fact]
-        public void AuctionWithBids()
+        public void ReturnsZeroGivenToNoBidAuction()
         {
-            //Arranje
+            //Arrange
             var auction = new AuctionCore.Auction("PICTURE");
-            var joe = new Interested("Joe Delaney", auction);
-            var luise = new Interested("Luise Farmo", auction);
-
-            auction.ReceiveBid(joe, 500);
-            auction.ReceiveBid(luise, 800);
-            auction.ReceiveBid(joe, 900);
-            auction.ReceiveBid(luise, 850);
 
             //Act 
             auction.End();
 
             //Assert
-            var valueexpected = 900;
+            var valueexpected = 0;
             var valueobtained = auction.Winner.Value;
 
             Assert.Equal(valueexpected, valueobtained);
-
         }
 
     }
