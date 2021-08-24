@@ -3,6 +3,7 @@
     public enum StatusEnum
     {
         Inprogress,
-        Finalized
+        Finalized,
+        Create
     }
 }

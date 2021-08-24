@@ -5,6 +5,7 @@ namespace AuctionCore
 {
     public class Auction
     {
+        private Interested _LastCustomer;
         private IList<Bid> _Bids;
         public IEnumerable<Bid> Bids => _Bids;
         public string Item { get; }
@@ -15,20 +16,26 @@ namespace AuctionCore
         {
             Item = item;
             _Bids = new List<Bid>();
-            Status = StatusEnum.Inprogress;
+            Status = StatusEnum.Create;
         }
 
         public void ReceiveBid(Interested client, double value)
         {
-            if(Status.Equals(StatusEnum.Inprogress))
-                _Bids.Add(new Bid(client, value));
+            if (Status.Equals(StatusEnum.Inprogress))
+            {
+                if (client != _LastCustomer)
+                {
+                    _Bids.Add(new Bid(client, value));
+                    _LastCustomer = client;
+
+                }
+
+            }
+                
         }
 
-        public void Start()
-        {
-
-        }
-
+        public void Start() => Status = StatusEnum.Inprogress;
+      
         public void End()
         {
             Status = StatusEnum.Finalized;

@@ -15,6 +15,8 @@ namespace Test.Auction
             var auction = new AuctionCore.Auction("PICTURE");
             var Michel = new Interested("Michel", auction);
 
+            auction.Start();
+
             foreach (var offer in offers)
                 auction.ReceiveBid(Michel, offer);
 
@@ -27,6 +29,48 @@ namespace Test.Auction
             var valueobtained = auction.Bids.Count();
 
             Assert.Equal(qtdExpected, valueobtained);
+        }
+
+        [Theory]
+        [InlineData(new double[] { 300, 500, 700 })]
+        public void ReturnsZeroIfTheAuctionHasNotStarted(double[] offers)
+        {
+            //Arrange
+            var auction = new AuctionCore.Auction("Iphone XS");
+            var Joe = new Interested("Joe", auction);
+
+            //Act 
+            foreach (var offer in offers)
+                auction.ReceiveBid(Joe, offer);
+
+            auction.End();
+
+            //Assert
+            var valueobtained = auction.Bids.Count();
+
+            Assert.Equal(0, valueobtained);
+        }
+
+        [Fact]
+        public void NotAcceptedNextBidDealSameCustomerPerformedLastBid()
+        {
+            //Arrange
+            var auction = new AuctionCore.Auction("Iphone XS");
+            var Joe = new Interested("Joe", auction);
+
+            auction.Start();
+            auction.ReceiveBid(Joe, 500);
+
+            //Act 
+            auction.ReceiveBid(Joe, 900);
+
+            auction.End();
+
+            //Assert
+            var valueExpected = 1;
+            var valueobtained = auction.Bids.Count();
+
+            Assert.Equal(valueExpected, valueobtained);
         }
     }
 }
