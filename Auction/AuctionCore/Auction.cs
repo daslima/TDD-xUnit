@@ -18,20 +18,14 @@ namespace AuctionCore
             _Bids = new List<Bid>();
             Status = StatusEnum.Create;
         }
-
+        
         public void ReceiveBid(Interested client, double value)
         {
-            if (Status.Equals(StatusEnum.Inprogress))
+            if (BidIsValid(client))
             {
-                if (client != _LastCustomer)
-                {
-                    _Bids.Add(new Bid(client, value));
-                    _LastCustomer = client;
-
-                }
-
+                _Bids.Add(new Bid(client, value));
+                _LastCustomer = client;
             }
-                
         }
 
         public void Start() => Status = StatusEnum.Inprogress;
@@ -44,6 +38,9 @@ namespace AuctionCore
                          .OrderBy(b => b.Value)
                          .LastOrDefault();
         }
-       
+
+        private bool BidIsValid(Interested client) => Status == StatusEnum.Inprogress && client != _LastCustomer;
+
+
     }
 }

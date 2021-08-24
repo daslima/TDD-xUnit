@@ -18,6 +18,15 @@ namespace Test.Auction
 
             auction.Start();
 
+            for (int i = 0; i < offers.Length; i++)
+            {
+                var value = offers[i];
+                if (i % 2 == 0)
+                    auction.ReceiveBid(joe, value);
+                else
+                    auction.ReceiveBid(luise, value);
+            }
+
             foreach (var value in offers)
             {
                 auction.ReceiveBid(joe, value);

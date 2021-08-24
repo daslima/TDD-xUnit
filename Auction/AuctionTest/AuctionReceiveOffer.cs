@@ -14,11 +14,19 @@ namespace Test.Auction
             //Arrange
             var auction = new AuctionCore.Auction("PICTURE");
             var Michel = new Interested("Michel", auction);
+            var Maria = new Interested("Maria", auction);
 
             auction.Start();
 
-            foreach (var offer in offers)
-                auction.ReceiveBid(Michel, offer);
+            for (int i = 0; i < offers.Length; i++)
+            {
+                var value = offers[i];
+
+                if (i % 2 == 0)
+                    auction.ReceiveBid(Michel, value);
+                else
+                    auction.ReceiveBid(Maria, value);
+            }
 
             auction.End();
 
