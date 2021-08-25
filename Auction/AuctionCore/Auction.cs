@@ -32,6 +32,9 @@ namespace AuctionCore
       
         public void End()
         {
+            if (!Status.Equals(StatusEnum.Inprogress))
+                throw new System.InvalidOperationException("It is necessary to start the auction before finishing");
+
             Status = StatusEnum.Finalized;
 
             Winner = Bids.DefaultIfEmpty(new Bid(null,0))

@@ -61,5 +61,22 @@ namespace Test.Auction
             Assert.Equal(valueexpected, valueobtained);
         }
 
+        [Fact]
+        public void ThrowInvalidOperationExceptionAuctionNotStarted()
+        {
+            //Arranje 
+            var auction = new AuctionCore.Auction("Mouse");
+            
+            //Assert
+            var obtainedException =  Assert.Throws<System.InvalidOperationException>(
+                //Act 
+                () => auction.End()
+            );
+
+            var message = "It is necessary to start the auction before finishing";
+
+            Assert.Equal(message, obtainedException.Message);
+        }
+
     }
 }
