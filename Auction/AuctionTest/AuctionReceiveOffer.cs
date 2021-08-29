@@ -1,4 +1,5 @@
 ﻿using AuctionCore;
+using AuctionCore.Modality;
 using System.Linq;
 using Xunit;
 
@@ -12,7 +13,8 @@ namespace Test.Auction
         public void DoesNotAllowNewBidsAuctionCompleted(int qtdExpected, double[] offers)
         {
             //Arrange
-            var auction = new AuctionCore.Auction("PICTURE");
+            IModality modality = new HighestValue();
+            var auction = new AuctionCore.Auction("PICTURE", modality);
             var Michel = new Interested("Michel", auction);
             var Maria = new Interested("Maria", auction);
 
@@ -43,7 +45,8 @@ namespace Test.Auction
         public void NotAcceptedNextBidDealSameCustomerPerformedLastBid()
         {
             //Arrange
-            var auction = new AuctionCore.Auction("Iphone XS");
+            IModality modality = new HighestValue();
+            var auction = new AuctionCore.Auction("Iphone XS",modality);
             var Joe = new Interested("Joe", auction);
 
             auction.Start();

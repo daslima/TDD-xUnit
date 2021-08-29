@@ -1,4 +1,5 @@
 ﻿using AuctionCore;
+using AuctionCore.Modality;
 using System;
 
 namespace AuctionAppConsole
@@ -14,7 +15,8 @@ namespace AuctionAppConsole
         public static void AuctionWithOnebid()
         {
             //Arranje
-            var auction = new Auction("PICTURE");
+            IModality modality = new HighestValue();
+            var auction = new Auction("PICTURE", modality);
             var joe = new Interested("Joe Delaney", auction);
 
             auction.ReceiveBid(joe, 500);
@@ -32,7 +34,8 @@ namespace AuctionAppConsole
         public static void AuctionWithBids()
         {
             //Arranje
-            var auction = new Auction("PICTURE");
+            IModality modality = new HighestValue();
+            var auction = new Auction("PICTURE", modality);
             var joe = new Interested("Joe Delaney", auction);
             var luise = new Interested("Luise Farmo", auction);
 

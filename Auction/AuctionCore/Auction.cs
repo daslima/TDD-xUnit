@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AuctionCore.Modality;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AuctionCore
@@ -11,12 +12,14 @@ namespace AuctionCore
         public string Item { get; }
         public Bid Winner { get; private set; }
         public StatusEnum Status { get; private set; }
+        public IModality Modality { get; set; }
 
-        public Auction(string item)
+        public Auction(string item, IModality modality)
         {
             Item = item;
             _Bids = new List<Bid>();
             Status = StatusEnum.Create;
+            Modality = modality;
         }
         
         public void ReceiveBid(Interested client, double value)
@@ -35,11 +38,9 @@ namespace AuctionCore
             if (!Status.Equals(StatusEnum.Inprogress))
                 throw new System.InvalidOperationException("It is necessary to start the auction before finishing");
 
-            Status = StatusEnum.Finalized;
+            Winner = Modality.Evaluate(this); 
 
-            Winner = Bids.DefaultIfEmpty(new Bid(null,0))
-                         .OrderBy(b => b.Value)
-                         .LastOrDefault();
+            Status = StatusEnum.Finalized;
         }
 
         private bool BidIsValid(Interested client) => Status == StatusEnum.Inprogress && client != _LastCustomer;

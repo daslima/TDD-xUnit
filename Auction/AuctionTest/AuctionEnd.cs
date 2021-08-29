@@ -1,4 +1,5 @@
 ﻿using AuctionCore;
+using AuctionCore.Modality;
 using Xunit;
 
 namespace Test.Auction
@@ -12,7 +13,8 @@ namespace Test.Auction
         public void ReturnsHighestValueGivenAnAuctionWithAtLeastOneValue(double valueexpected, double[] offers)
         {
             //Arrange
-            var auction = new AuctionCore.Auction("PICTURE");
+            IModality modality = new HighestValue();
+            var auction = new AuctionCore.Auction("PICTURE", modality);
             var joe = new Interested("Joe Delaney", auction);
             var luise = new Interested("Luise Farmo", auction);
 
@@ -47,7 +49,8 @@ namespace Test.Auction
         public void ReturnsZeroGivenToNoBidAuction()
         {
             //Arrange
-            var auction = new AuctionCore.Auction("PICTURE");
+            IModality modality = new HighestValue();
+            var auction = new AuctionCore.Auction("PICTURE", modality);
 
             auction.Start();
 
@@ -65,7 +68,8 @@ namespace Test.Auction
         public void ThrowInvalidOperationExceptionAuctionNotStarted()
         {
             //Arranje 
-            var auction = new AuctionCore.Auction("Mouse");
+            IModality modality = new HighestValue();
+            var auction = new AuctionCore.Auction("Mouse",modality);
             
             //Assert
             var obtainedException =  Assert.Throws<System.InvalidOperationException>(
@@ -76,6 +80,36 @@ namespace Test.Auction
             var message = "It is necessary to start the auction before finishing";
 
             Assert.Equal(message, obtainedException.Message);
+        }
+
+        [Theory]
+        [InlineData(1200,1250,new double[] {800,1150,1400,1250})]
+        public void ClosestSuperiorOffer(double destinationValue, double expectedValue, double[] offers)
+        {
+            //Arrange
+            IModality modality = new ClosestTopOffer(destinationValue);
+            var auction = new AuctionCore.Auction("PICTURE", modality);
+            var joe = new Interested("Joe Delaney", auction);
+            var luise = new Interested("Luise Farmo", auction);
+
+            auction.Start();
+
+            for (int i = 0; i < offers.Length; i++)
+            {
+                var value = offers[i];
+                if (i % 2 == 0)
+                    auction.ReceiveBid(joe, value);
+                else
+                    auction.ReceiveBid(luise, value);
+            }
+
+            //Act 
+            auction.End();
+
+            //Assert
+            var valueobtained = auction.Winner.Value;
+
+            Assert.Equal(expectedValue, valueobtained);
         }
 
     }
